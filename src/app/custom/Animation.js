@@ -19,6 +19,7 @@ export default class Animation {
         this._resetPlanet();
 
         const tw = this._tl.to(this._planets, {
+            id:'scaleStagger',
             scale: 0,
             duration: 1,
             stagger: {
@@ -28,7 +29,6 @@ export default class Animation {
             }
         })
 
-        tw.addLabel('scaleStagger')
         this._tl.add(tw)
     }
 
@@ -36,6 +36,7 @@ export default class Animation {
         this._resetPlanet();
 
         const tw = this._tl.to(this._planets, {
+            id:'positionStagger',
             y: '50px',
             duration: 1,
             stagger: {
@@ -45,8 +46,7 @@ export default class Animation {
                 repeat: -1
             }
         })
-        
-        tw.addLabel('positionStagger')
+
         this._tl.add(tw)
     }
 
