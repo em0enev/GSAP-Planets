@@ -17,6 +17,7 @@ export default class Animation {
 
     _scalePlanet() {
         this._resetPlanet();
+        this._planets.forEach(p => p.id = "scaleStagger")
 
         const tw = this._tl.to(this._planets, {
             scale: 0,
@@ -27,13 +28,13 @@ export default class Animation {
                 repeat: -1
             }
         })
-        tw.addLabel('scaleStagger')
         this._tl.add(tw)
     }
 
     _positionPlanet() {
         this._resetPlanet();
-      
+        this._planets.forEach(p => p.id = "positionStagger")
+
         const tw = this._tl.to(this._planets, {
             y: '50px',
             duration: 1,
@@ -44,7 +45,6 @@ export default class Animation {
                 repeat: -1
             }
         })
-        tw.addLabel('positionStagger')
         this._tl.add(tw)
     }
 
